@@ -124,3 +124,17 @@ function validateParams(schema) {
     }
 }
 
+// END POINTS
+
+app.get('/', async (req, res) => {
+    const result = await pool.query(
+        'SELECT * FROM biodata ORDER BY id'
+    )
+
+    return successResponse(
+        res,
+        'Data retrieved successfully',
+        result.rows
+    )
+})
+
