@@ -226,3 +226,13 @@ app.delete(
     }
 )
 
+// ROUTE NOT FOUND
+
+app.use((req, res) => {
+    return errorResponse(
+        res,
+        'Endpoint not found',
+        404
+    )
+})
+
